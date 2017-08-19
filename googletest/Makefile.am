@@ -224,6 +224,17 @@ lib_libgtest_main_la_LIBADD = lib/libgtest.la
 # TESTS -- Programs run automatically by "make check"
 # check_PROGRAMS -- Programs built by "make check" but not necessarily run
 
+noinst_LTLIBRARIES = samples/libsamples.la
+
+samples_libsamples_la_SOURCES = \
+  $(srcdir)/samples/sample1.cc \
+  samples/sample1.h \
+  samples/sample2.cc \
+  samples/sample2.h \
+  samples/sample3-inl.h \
+  samples/sample4.cc \
+  samples/sample4.h
+
 TESTS=
 TESTS_ENVIRONMENT = GTEST_SOURCE_DIR="$(srcdir)/test" \
                     GTEST_BUILD_DIR="$(top_builddir)/test"
